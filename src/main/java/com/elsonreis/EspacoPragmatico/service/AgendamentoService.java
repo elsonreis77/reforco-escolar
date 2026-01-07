@@ -13,7 +13,13 @@ public class AgendamentoService {
     @Autowired
     private AgendamentoRepository repository;
 
+    @Autowired
+    private HorarioService horarioService;
+
     public Agendamento salvar(Agendamento agendamento) {
+
+        horarioService.marcarIndisponivel(agendamento.getHorario());
+
         return repository.save(agendamento);
     }
 

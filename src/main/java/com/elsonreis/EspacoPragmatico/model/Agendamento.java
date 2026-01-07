@@ -4,9 +4,11 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
+import lombok.Getter;
 
 import java.time.LocalDate;
 
+@Getter
 public class Agendamento {
 
     @Id
