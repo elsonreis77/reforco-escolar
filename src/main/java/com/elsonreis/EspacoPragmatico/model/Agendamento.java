@@ -1,25 +1,21 @@
 package com.elsonreis.EspacoPragmatico.model;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.Setter;
 
-import java.time.LocalDate;
-
+@Entity
 @Getter
+@Setter
 public class Agendamento {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private LocalDate data;
+    private String nomeAluno;
 
     @ManyToOne
-    private  Aluno aluno;
-
-    @ManyToOne
+    @JoinColumn(name = "horario_id")
     private Horario horario;
 }

@@ -34,7 +34,7 @@ public class HorarioService {
     }
 
     public List<Horario> listarDisponiveis() {
-        return repository.findByDisponivelTrue();
+        return repository.findByDisponivel(true);
     }
 
     public void marcarIndisponivel(Horario horario) {
